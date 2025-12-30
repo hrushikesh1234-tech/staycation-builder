@@ -9,25 +9,27 @@ import cozynestResort from "@/assets/cozynest-resort.jpg";
 const properties = [
   {
     image: domeResort,
-    title: "P21 – Dome Story Resort by Leestays at Malvandi Lake, Lonavala",
+    title: "Dome Story Resort – Malvandi Lake, Lonavala",
     price: "₹7,499",
     priceNote: "per person with meal",
     amenities: [
       "Private Washroom",
       "AC",
       "Mini Fridge",
-      "Electric kettle",
+      "Electric Kettle",
       "BBQ",
       "Food Included",
       "Free Boating",
       "Bonfire",
-      "Lake access",
+      "Lake Access",
     ],
     isTopSelling: true,
+    location: "Lonavala",
+    rating: 4.9,
   },
   {
     image: lakestoryResort,
-    title: "P7 – Lakestory Resort by Leestays, Pawna lake",
+    title: "Lakestory Resort – Pawna Lake",
     price: "₹7,499",
     priceNote: "per person with meal",
     amenities: [
@@ -39,13 +41,15 @@ const properties = [
       "Home Theatre",
       "BBQ",
       "Food Included",
-      "Lake touch",
+      "Lake Touch",
     ],
     isTopSelling: true,
+    location: "Pawna Lake",
+    rating: 4.8,
   },
   {
     image: riversideGlamping,
-    title: "P22 – Pawna Riverside Glamping",
+    title: "Pawna Riverside Glamping",
     price: "₹2,999",
     priceNote: "per person with meal",
     amenities: [
@@ -60,10 +64,12 @@ const properties = [
       "Liquor Bar",
     ],
     isTopSelling: false,
+    location: "Pawna Lake",
+    rating: 4.7,
   },
   {
     image: colorfulCabins,
-    title: "P5 – AC House with sleeping loft at Pawna lake",
+    title: "AC House with Sleeping Loft – Pawna Lake",
     price: "₹3,199",
     priceNote: "per person with meal",
     amenities: [
@@ -74,13 +80,15 @@ const properties = [
       "Free Activities",
       "Paid Boating",
       "Bonfire",
-      "Lake access",
+      "Lake Access",
     ],
     isTopSelling: false,
+    location: "Pawna Lake",
+    rating: 4.6,
   },
   {
     image: coupleRetreat,
-    title: "P2 – Dew Dreams, Couple Stay with Private Pool at Pawna lake",
+    title: "Dew Dreams – Couple Stay with Private Pool",
     price: "₹8,249",
     priceNote: "per person with meal",
     amenities: [
@@ -95,10 +103,12 @@ const properties = [
       "Room Service",
     ],
     isTopSelling: false,
+    location: "Pawna Lake",
+    rating: 4.9,
   },
   {
     image: cozynestResort,
-    title: "P1 – CozyNest at Chavsar, Pawna lake",
+    title: "CozyNest at Chavsar – Pawna Lake",
     price: "₹3,300",
     priceNote: "per person with meal",
     amenities: [
@@ -106,32 +116,70 @@ const properties = [
       "Food Included",
       "Paid Boating",
       "Bonfire",
-      "Lake access",
+      "Lake Access",
     ],
     isTopSelling: false,
+    location: "Pawna Lake",
+    rating: 4.5,
   },
 ];
 
 const Properties = () => {
   return (
-    <section id="properties" className="py-16 md:py-24 bg-secondary/50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-foreground text-2xl md:text-3xl lg:text-4xl font-display text-center mb-4">
-          Most Popular Cottages & Resorts
-        </h2>
-        <p className="text-muted-foreground text-center mb-12 text-lg">
-          in Pawna lake, Lonavala
-        </p>
+    <section id="properties" className="py-24 md:py-32 bg-secondary/30 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {properties.map((property) => (
+      <div className="container mx-auto px-6 relative">
+        {/* Section Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">
+            Curated Collection
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-semibold mb-6">
+            Premium Stays
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Handpicked luxury cottages and resorts in Pawna Lake & Lonavala, 
+            designed for unforgettable experiences.
+          </p>
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <div className="w-12 h-px bg-border" />
+            <div className="w-2 h-2 rounded-full bg-primary" />
+            <div className="w-12 h-px bg-border" />
+          </div>
+        </div>
+
+        {/* Properties Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {properties.map((property, index) => (
             <div
               key={property.title}
-              className="hover:scale-[1.02] transition-transform duration-300"
+              className="animate-fade-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <PropertyCard {...property} />
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <p className="text-muted-foreground mb-4">
+            Can't find what you're looking for?
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 text-primary hover:text-gold-dark font-medium transition-colors duration-300"
+          >
+            Contact us for custom recommendations
+            <span className="text-lg">→</span>
+          </a>
         </div>
       </div>
     </section>

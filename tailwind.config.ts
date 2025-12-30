@@ -7,7 +7,7 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: "1.5rem",
       screens: {
         sm: "640px",
         md: "768px",
@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],
-        display: ["Playfair Display", "serif"],
+        sans: ["Outfit", "sans-serif"],
+        display: ["Cormorant Garamond", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -59,14 +59,18 @@ export default {
           DEFAULT: "hsl(var(--header-bg))",
           foreground: "hsl(var(--header-foreground))",
         },
-        forest: {
-          DEFAULT: "hsl(var(--forest))",
-          light: "hsl(var(--forest-light))",
-          dark: "hsl(var(--forest-dark))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
         },
-        warm: {
-          white: "hsl(var(--warm-white))",
-          gray: "hsl(var(--warm-gray))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          light: "hsl(var(--navy-light))",
+        },
+        cream: {
+          DEFAULT: "hsl(var(--cream))",
+          dark: "hsl(var(--cream-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -85,8 +89,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
+        sm: "var(--shadow-sm)",
         card: "var(--shadow-card)",
         "card-hover": "var(--shadow-card-hover)",
+        gold: "var(--shadow-gold)",
       },
       keyframes: {
         "accordion-down": {
@@ -101,6 +107,10 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        "gradient-gold": "var(--gradient-gold)",
+        "gradient-shimmer": "var(--gradient-shimmer)",
       },
     },
   },
